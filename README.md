@@ -8,23 +8,23 @@ To write a program to predict the profit of a city using the linear regression m
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. Import necessary libraries including NumPy, Pandas, and StandardScaler from sklearn.
-2. Define a function `linear_regression` which takes input features (X1), target variable (y), learning rate (default value is 0.1), and number of iterations (default value is 1000). This function implements gradient descent to find the optimal parameters for the linear regression model.
-3. Read the startup data from the CSV file into a DataFrame using Pandas.
-4. Extract the feature matrix (X) and target variable (y) from the DataFrame. Convert X into a NumPy array and ensure it's of float data type. Also, scale both X and y using StandardScaler.
-5. Call the `linear_regression` function with the scaled feature matrix (X1_Scaled) and target variable (Y1_Scaled) to obtain the optimal parameters (theta).
-6. Create a new data point (new_data) and scale it using the same scaler used for the training data. Then, predict the profit for this new data point using the learned parameters (theta).
-7. Inverse transform the predicted profit to get the original scale using the same scaler used for scaling the target variable.
-8. Print the predicted profit.
+Step 1: Start
+Step 2: Import the required library and read the dataframe.
+Step 3: Write a function computeCost to generate the cost function.
+Step 4: Perform iterations og gradient steps with learning rate.
+Step 5: Plot the Cost function using Gradient Descent and generate the required graph.
+Step 6: Stop
+
 
 ## Program:
 ```
 /*
-Program to Implement the Linear Regression using Gradient Descent
-Developed By    : Maheswaran K
-Register Number : 212222110023
+Program to implement the linear regression using gradient descent.
+Developed by: Maheswaran K
+RegisterNumber:  212222110023
 */
-
+```
+```
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
@@ -36,7 +36,7 @@ def linear_regression(X1,y,learning_rate=0.1,num_iters=1000):
         errors=(predictions-y).reshape(-1,1)
         theta-=learning_rate*(1/len(X1))*X.T.dot(errors)
     return theta
-data=pd.read_csv("C:/Users/admin/Downloads/rohithprem/50_Startups.csv")
+data=pd.read_csv("C:/Users/admin/Downloads/VARSHINI/50_Startups.csv")
 data.head()
 X = (data.iloc[1:,:-2].values)
 X1 =X.astype(float)
@@ -57,12 +57,16 @@ print(f"Predicted value:{pre}")
 ```
 
 ## Output:
-![1](https://github.com/rohithprem18/Implementation-of-Linear-Regression-Using-Gradient-Descent/assets/146315115/d0013d15-255a-4ce8-b8d9-824e1d5e8204)
-![2](https://github.com/rohithprem18/Implementation-of-Linear-Regression-Using-Gradient-Descent/assets/146315115/3ed4aeaf-7e6a-40b0-9ddf-579d2aab59dc)
-![3](https://github.com/rohithprem18/Implementation-of-Linear-Regression-Using-Gradient-Descent/assets/146315115/31391540-c63d-4e98-a42f-1a8e9ce2ac35)
-![4](https://github.com/rohithprem18/Implementation-of-Linear-Regression-Using-Gradient-Descent/assets/146315115/85e735b4-bc14-4bfa-834a-14a0b1483b20)
-![5](https://github.com/rohithprem18/Implementation-of-Linear-Regression-Using-Gradient-Descent/assets/146315115/56261815-8c71-47ce-a835-c25cccea5fe7)
-![6](https://github.com/rohithprem18/Implementation-of-Linear-Regression-Using-Gradient-Descent/assets/146315115/8177ec32-5b3d-4258-bdb6-e538c0d823d0)
+
+
+![ml2](https://github.com/anu-varshini11/Implementation-of-Linear-Regression-Using-Gradient-Descent/assets/138969827/475640c7-9efb-4ca2-882a-aa52906026bd)
+![ml3](https://github.com/anu-varshini11/Implementation-of-Linear-Regression-Using-Gradient-Descent/assets/138969827/c81d7ffe-da92-491d-912d-9768469b2f81)
+![Screenshot 2024-04-27 114238](https://github.com/VARSHINI22009118/Implementation-of-Linear-Regression-Using-Gradient-Descent/assets/119401150/30676fc4-7c69-4dd7-b9c1-a7ecbf69769b)
+
+
+
+
+
 
 
 ## Result:
